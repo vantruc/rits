@@ -12,7 +12,7 @@ Run the test procedure /inst/test.r
 
 Install from binary & run test procedure
 
-CVS commit and tag
+svn commit and tag
 
 Protect .tar.gz
 
