@@ -1,4 +1,7 @@
 its package release notes
+1.1.3 2006-09-09
+1  changed old dates in test.r
+
 1.1.2 2006-09-09
 1   removed install.R
 2   removed README from top level
