@@ -1,4 +1,7 @@
 its package release notes
+1.1.2 2006-09-09
+1   removed install.R
+2   removed README from top level
 
 1.1.1 2005-10-23
 1   fixed itsAccessor example (sometimes produced less than 10 date elements
