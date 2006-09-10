@@ -8,4 +8,3 @@ Depends: R (>= 2.0.0), methods, stats, Hmisc
 Description: The its package contains an S4 class for handling irregular time series
 LazyLoad: yes
 License: GPL Version 2
-Packaged: Sun Oct 30 18:47:01 2005; whita
