@@ -9,13 +9,14 @@
 }
 \usage{
 as.list.its(x,...)
-as.data.frame.its(x, row.names = NULL, optional = FALSE)
+as.data.frame.its(x, row.names = NULL, optional = FALSE,...)
 }
 \arguments{
   \item{x}{an object of class \code{"its"}}
-	\item{\dots}{further arguments to \code{as.list}}
-	\item{row.names}{character vector giving the row names for the data frame.}
-	\item{optional}{logical. If 'TRUE', setting row names and converting column names (to syntactic names) is optional.}
+  \item{\dots}{further arguments to \code{as.list}}
+  \item{row.names}{character vector giving the row names for the data frame.}
+  \item{optional}{logical. If 'TRUE', setting row names and converting column names (to syntactic names) is optional.}
+  \item{\dots}{further arguments passed to as.data.frame (ignored)}
 }
 \details{
 	Conversion ot basic types
@@ -23,7 +24,7 @@ as.data.frame.its(x, row.names = NULL, optional = FALSE)
 \value{
 
   For \code{as.list.its} a list
-	for \code{as.data.frame.its} a data frame
+  for \code{as.data.frame.its} a data frame
 
 }
 \author{Gabor Grothendieck}

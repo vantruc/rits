@@ -6,7 +6,7 @@ as.list.its <- function(x,...) {
 	result
 }
 
-as.data.frame.its <- function(x, row.names = NULL, optional = FALSE) {
+as.data.frame.its <- function(x, row.names = NULL, optional = FALSE, ...) {
 	result <- lapply(as.list(x), I)
 	result$check.names <- result$check.rows <- optional
 	do.call(data.frame, result)
