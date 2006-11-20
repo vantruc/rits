@@ -80,6 +80,20 @@ function(e1,e2)
     return(its(ans,i.dates))
 }
 )
+setMethod("Arith",signature("its", "numeric"),
+function(e1,e2)
+{
+    ans <- callGeneric(e1@.Data,e2) 
+    return(its(ans,dates(e1)))
+}
+)
+setMethod("Arith",signature("numeric","its"),
+function(e1,e2)
+{
+    ans <- callGeneric(e1,e2@.Data)  
+    return(its(ans,dates(e2)))
+}
+)
 #plot-method--------------------------------------------------------
 if(!isGeneric("plot")) setGeneric("plot", useAsDefault=plot)
 setMethod("plot",signature(x="its",y="missing"),
