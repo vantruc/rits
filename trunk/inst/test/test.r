@@ -278,15 +278,15 @@ testIts <- function(graph=TRUE,New=TRUE)
   x <- its(mat,mytimes)
   xlate <- its(mat,later)
   xover <- its(mat,over)
+
   foo <- appendIts(x,xlate)
   bar <- appendIts(xlate,x)
-  test(identical(foo,bar))
-  test(identical(foo[1:10],x))
+  test(all.equal(foo,bar))
+  test(all.equal(foo[1:10],x))
   ## test(identical(foo[11:20],xlate))
   test(all.equal(foo[11:20],xlate))
   foo <- try(appendIts(x,x[(2:(nrow(x)-1)),],but=FALSE),silent=TRUE)
   test(identical(grep("appendor data must extend appendee data",foo)>0,TRUE))
-  foo <- appendIts(x/x,xover/xover,but=FALSE)
   foo <- try(appendIts(x,xover,but=FALSE),silent=TRUE)
   test(identical(grep("overlap data does not match",foo)>0,TRUE))
   foo <- try(appendIts(x,xover),silent=TRUE)
@@ -484,47 +484,9 @@ testIts <- function(graph=TRUE,New=TRUE)
       bar <- try(collapseIts(foo),silent=TRUE)
       test(bar=="Error in collapseIts(foo) : column data must match in collapse function\n")
     }
-  ##itsPrice***********************************************************
-  ##creat a (static) set of securities
-  ##3 indices, 3 stocks
-  x <- priceIts()
-  if(require(Rblp))
-    {
-      b <- blpConnect()
-      yahtkrs <- c("^gdaxi","^ftse","^spx")
-      blptkrs <- c("dax index","ukx index","spx index")
-      startdate <- "2004-02-01"
-      enddate <- "2004-02-10"
-      yahitemslist <- c("Close","Open")
-      blpitemslist <- c("LAST_PRICE","PX_OPEN")
-      for(j in 1:length(yahitemslist))
-        {
-          yahooPrice <- priceIts(instrument = yahtkrs, 
-                                 start=startdate, 
-                                 end=enddate, 
-                                 quote = yahitemslist[j], 
-                                 provider = "yahoo", 
-                                 method = "auto", 
-                                 origin = "1899-12-30") 
-          blpPrice <- NULL
-          for(i in 1:length(blptkrs))
-            {
-              blpPrice <- union(blpPrice,getBLPTimeSeries(b, 
-                                                          blpCodes = blptkrs[i], 
-                                                          blpItems = blpitemslist[j], 
-                                                          currency = "LOC", 
-                                                          startDate = as.POSIXct(startdate,its.format()), 
-                                                          endDate = as.POSIXct(enddate,its.format()), 
-                                                          reqSize = 20))
-            }
-          class(blpPrice)    
-          names(blpPrice) <- blptkrs
-          foo <- union(yahooPrice[,1:3],blpPrice[,1:3])
-          test(var(as.numeric(core(foo[,1:3]-foo[,4:6])),na.rm=T)==0)
-        }
-    }
+
   ##its-utilities******************************************************
-######################################################################################################################################################################################
+  ######################################################################################################################################################################################
   ##fromirtsIts-function------------------------------------------------
   ##identical(fromirtsIts(irts(x@dates,x)),x)
 
