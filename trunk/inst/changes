@@ -1,4 +1,8 @@
 its package release notes
+
+1.1.5 2006-09-09
+1 added its,numeric and numeric,its S4 methods for Arith
+
 1.1.3 2006-09-09
 1  changed old dates in test.r
 
