@@ -3,6 +3,8 @@
 \name{itsArith}
 \alias{itsArith}
 \alias{Arith,its,its-method}
+\alias{Arith,its,numeric-method}
+\alias{Arith,numeric,its-method}
 \alias{Arith.its}
 \alias{+.its}
 \alias{-.its}
