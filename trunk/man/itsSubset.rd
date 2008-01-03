@@ -3,10 +3,6 @@
 \alias{itsSubset}
 \alias{rangeIts}
 \alias{extractIts}
-\alias{x[i,j]}
-\alias{[}
-\alias{[,its-method}
-\alias{[<-,its,its-method}
 \title{Range and Extract for Irregular Time-Series Objects}
 \description{
   Range and extract for objects of class \code{"its"}.
@@ -14,7 +10,6 @@
 \usage{
 rangeIts(x,start=dates(x)[1],end=dates(x)[nrow(x)],format=its.format(),...)
 extractIts(x,weekday=FALSE,find=c("all","last","first"),period=c("week","month","year"),partials=TRUE,firstlast = FALSE,select)
-x[i,j,dates]
 }
 \arguments{
   \item{x}{an object of class \code{"its"}}
@@ -22,8 +17,6 @@ x[i,j,dates]
     if character, then the format is as specified by the argument \code{format}}
   \item{format}{format of \code{"start"} and \code{"end"} dates, see
         \code{\link{format.POSIXct}}.}
-  \item{i,j}{indices specifying the parts to be extracted from the irregular
-        time-series object}
   \item{dates}{POSIX dates specifying the timestamps of rows to be extracted from the irregular
         time-series object}  
   \item{\dots}{further arguments passed to \code{\link{as.POSIXct}}}
@@ -44,11 +37,6 @@ x[i,j,dates]
   \code{extractIts} selects a subset of rows that obey some sort of semi-regular rule
   such as monthends, weekdays, and so on.  The order of application is \code{weekday}, \code{find}, 
   then \code{select}.
-
-  \code{x[i,j,dates]} extractor method for an irregular time-series: \code{i} and \code{dates}
-  are mutually exclusive alternatives for specifying rows.  It proceeds as for a matrix, with the 
-  exception that drop=FALSE is enforced, so the result always inherits from matrix.
-
 }
 \value{
 
@@ -66,10 +54,6 @@ x[i,j,dates]
   \code{\link{itsTimes}},
   \code{\link{itsSubset}},
   \code{\link{itsFin}},
-  \code{\link{itsDisp}},
-  \code{\link{itsInfo}},
-  \code{\link{itsCumdif}},
-  \code{\link{itsArith}}
   \code{\link{itsInterp}}  
 }
 

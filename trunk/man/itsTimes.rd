@@ -44,10 +44,6 @@ weekdayIts(x,...)
   \code{\link{itsTimes}}
   \code{\link{itsSubset}}
   \code{\link{itsFin}}
-  \code{\link{itsDisp}}
-  \code{\link{itsInfo}}
-  \code{\link{itsCumdif}}
-  \code{\link{itsArith}}
   \code{\link{itsInterp}}  
 }
 

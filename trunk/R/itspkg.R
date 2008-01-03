@@ -3,15 +3,11 @@
 #    Copyright (C) 2004 to present Whit Armstrong
 
 
-.onLoad <- function(lib, pkg) require(methods)
-
-#lazyloading now takes care of this
-# require("Hmisc",quietly=TRUE)
-
 itsState <- new.env()
 assign(x=".itsformat", value="%Y-%m-%d" , env=itsState)
 setClass("its",representation("matrix",dates="POSIXt"))
-#-Methods-
+
+##-Methods-
 #names-method-------------------------------------------------------
 setMethod("names",signature(x="its"),
     namesIts <- function(x)
