@@ -2,12 +2,10 @@
 \name{itsDef}
 
 \alias{its}
-\alias{its-class}
 \alias{is.its}
 \alias{as.its}
 \alias{as.its.default}
 \alias{as.its.zoo}
-\alias{coerce,its,data.frame-method}
 \alias{its.format}
 \alias{newIts}
 
@@ -27,8 +25,7 @@
 its(x,
 dates=as.POSIXct(x=strptime(dimnames(x)[[1]],format=its.format())),
 names=dimnames(x)[[2]],
-format=its.format(),
-...)
+format=its.format(),...)
 
 newIts(x=NA,start=format(Sys.Date(),format=its.format()),
 end,ncol=1,by="DSTday",extract=FALSE,format=its.format(),tz="",...)
@@ -122,10 +119,6 @@ see \code{\link{format.POSIXct}}
   \code{\link{itsTimes}},
   \code{\link{itsSubset}},
   \code{\link{itsFin}},
-  \code{\link{itsDisp}},
-  \code{\link{itsInfo}},
-  \code{\link{itsCumdif}},
-  \code{\link{itsArith}},
   \code{\link{itsInterp}}  
   }
 

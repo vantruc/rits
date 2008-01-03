@@ -1,14 +1,6 @@
 \keyword{ts}
 \name{itsJoin}
 \alias{itsJoin}
-\alias{union}
-\alias{union,its,NULL-method}
-\alias{union,NULL,its-method}
-\alias{union,its,its-method}
-\alias{intersect}
-\alias{intersect,its,NULL-method}
-\alias{intersect,NULL,its-method}
-\alias{intersect,its,its-method}
 \alias{alignedIts}
 \alias{appendIts}
 \alias{collapseIts}
@@ -17,15 +9,13 @@
   Join functions for objects of class \code{"its"}.
 }
 \usage{
-union(x,y)
-intersect(x,y)
 alignedIts(obj1,obj2,print=FALSE)
 appendIts(obj1,obj2,but=TRUE,matchnames=TRUE)
 collapseIts(x)
 }
 
 \arguments{
-  \item{x, y}{an object of class \code{"its"} or NULL}
+  \item{x}{an object of class \code{"its"} or NULL}
   \item{obj1,obj2}{object of class \code{"its"}}
   \item{print}{logical flag to display summary information}
   \item{but}{logical flag controls whether overlap is disallowed}
@@ -33,14 +23,6 @@ collapseIts(x)
 }
 
 \details{
-
-\code{union} has a number of time values (rows) which is determined by the union
-of the time-stamps of the two inputs.  The number of columns is the sum of the
-number of columns of the two inputs.
-
-\code{intersect} has a number of time values (rows) which is determined by the
-intersect of the time-stamps of the two inputs.  The number of columns is the sum
-of the number of columns of the two inputs.
 
 \code{alignedIts} selects the rows from two inputs which have identical time-stamps.
 
@@ -56,7 +38,7 @@ column names - this will in general result in a reduction in the number of colum
 }
 
 \value{
-For \code{union}, \code{intersect}, \code{appendIts} an object of class \code{"its"}.
+For \code{appendIts} an object of class \code{"its"}.
 
 For \code{alignedIts}, a list of two objects of class \code{"its"}
 }
@@ -72,10 +54,6 @@ For \code{alignedIts}, a list of two objects of class \code{"its"}
   \code{\link{itsTimes}},
   \code{\link{itsSubset}},
   \code{\link{itsFin}},
-  \code{\link{itsDisp}},
-  \code{\link{itsInfo}},
-  \code{\link{itsCumdif}},
-  \code{\link{itsArith}}
   \code{\link{itsInterp}}  
 }
 
