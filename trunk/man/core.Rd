@@ -1,10 +1,8 @@
 \name{core}
 \alias{core}
 \alias{core<-}
-\title{ Extract core from object or assign core to object }
-\description{
-  Extract core from objects.  Particularly time series objects.}
-}
+\title{Extract core from object or assign core to object}
+\description{Extract core from objects.  Particularly time series objects.}
 \usage{
 core(x)
 core(x) <- value
