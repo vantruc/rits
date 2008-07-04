@@ -1,10 +1,8 @@
 \name{dates}
 \alias{dates}
 \alias{dates<-}
-\title{ Extract dates from object or assign dates to object }
-\description{
-  Extract dates from objects.  Particularly time series objects.}
-}
+\title{Extract dates from object or assign dates to object.}
+\description{Extract dates from objects.  Particularly time series objects.}
 \usage{
 dates(x, ...)
 dates(x) <- value
