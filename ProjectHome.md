@@ -1,0 +1,1 @@
+Irregular time series package for the R environment for statistical computing and graphics.
